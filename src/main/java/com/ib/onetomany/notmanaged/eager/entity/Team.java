@@ -10,7 +10,7 @@ import javax.persistence.OneToMany;
 
 
 @Entity
-class Team {
+public class Team {
 	
 	@Id
 	@GeneratedValue

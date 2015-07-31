@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-class Player {
+public class Player {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
