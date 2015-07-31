@@ -18,8 +18,8 @@ public class PlayerConnector {
 		return iPlayerRepository.save(player);
 	}
 
-	public void deletePlayer(Player player) {
-		iPlayerRepository.delete(player);
+	public void deletePlayer(Long id) {
+		iPlayerRepository.delete(id);
 	}
 
 	public List<Player> getAllPlayers() {
