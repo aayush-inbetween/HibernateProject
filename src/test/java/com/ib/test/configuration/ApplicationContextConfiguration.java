@@ -88,6 +88,12 @@ public class ApplicationContextConfiguration {
   {
     return new ArrayList<Long>();
   }
+
+  @Bean
+  List<Long> createdPlayerIds()
+  {
+    return new ArrayList<Long>();
+  }
   
   @Bean
   List<Klass> createdKlasses()
