@@ -21,10 +21,11 @@ public class TeamConnector
 	}
 	
 	
-	public void deleteTeam(Team team)
+	
+	public void deleteTeam(Long id)
 	{
 		
-		 iTeamRepository.delete(team);
+		 iTeamRepository.delete(id);
 	}
 	
 	
@@ -34,10 +35,14 @@ public class TeamConnector
 		return (List<Team>) iTeamRepository.findAll();
 	}
 	
-	public Team getTeam(Team team)
+	
+	
+	
+	
+	public Team getTeam(Long id)
 	{
 		
-		return iTeamRepository.findOne(team.getId());
+		return iTeamRepository.findOne(id);
 	}
 	
 	

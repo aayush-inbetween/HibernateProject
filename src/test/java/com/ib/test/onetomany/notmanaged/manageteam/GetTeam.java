@@ -14,14 +14,14 @@ import com.ib.onetomany.notmanaged.eager.entity.Player;
 import com.ib.onetomany.notmanaged.eager.entity.Team;
 import com.ib.test.configuration.ApplicationContextConfiguration;
 
+@ContextConfiguration(classes = ApplicationContextConfiguration.class)
 
-@ContextConfiguration(classes=ApplicationContextConfiguration.class)
-class DeleteTeam extends AbstractTestNGSpringContextTests
+class GetTeam extends AbstractTestNGSpringContextTests
 {
 	@Autowired
 	TeamConnector teamconnector;
 	
-	
+		
 	@Resource(name = "createdTeamsIds")
 	List<Long> createdTeamsIds;
 
@@ -36,7 +36,10 @@ class DeleteTeam extends AbstractTestNGSpringContextTests
 	}
 
 	@Test(priority = 2)
-	public void execute()
-	{teamconnector.deleteTeam(createdTeamsIds.get(0));
+	public void execute() {
+		Team team = teamconnector.getTeam(createdTeamsIds.get(0));
+		System.out.println("ID\tName");
+		System.out.println(team.getId()+"\t"+team.getName());
+		
 	}
 }
