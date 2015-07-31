@@ -1,0 +1,56 @@
+apply plugin: 'java'
+apply plugin : 'eclipse'
+apply plugin : 'jetty'
+apply plugin: 'idea'
+apply plugin:  'war'
+
+httpPort = 8083
+sourceCompatibility = 1.8
+
+task explodedWar(type: Sync) {
+    into "$buildDir/explodedWar"
+    with war
+}
+
+repositories {
+  mavenCentral ()
+}
+
+dependencies {
+	def springFrameworkVersion = "4.1.6.RELEASE"
+
+  compile "org.springframework:spring-core:${springFrameworkVersion}"
+  compile "org.springframework:spring-tx:${springFrameworkVersion}"
+  compile "org.springframework:spring-orm:${springFrameworkVersion}"
+  compile "org.springframework:spring-webmvc:${springFrameworkVersion}"
+  compile "org.springframework.data:spring-data-jpa:1.7.2.RELEASE"
+  compile "org.hibernate:hibernate-entitymanager:3.6.0.Final"
+  compile 'org.springframework:spring-jdbc:3.2.0.RELEASE'
+  compile "mysql:mysql-connector-java:5.1.6"
+  compile 'org.apache.commons:commons-lang3:3.0'
+  compile "log4j:log4j:1.2.16"
+  compile "mysql:mysql-connector-java:5.1.6"
+  compile 'com.fasterxml.jackson.core:jackson-core:2.5.2'
+  compile 'com.fasterxml.jackson.core:jackson-databind:2.5.2'
+  compile 'org.mongodb:mongo-java-driver:2.13.1'
+  compile 'com.datastax.cassandra:cassandra-driver-core:2.1.4'
+  compile 'org.elasticsearch:elasticsearch:1.5.2'
+  compile 'javax.servlet:servlet-api:2.5'
+  compile 'javax.servlet:javax.servlet-api:3.1.0'
+  compile 'org.aspectj:aspectjtools:1.8.5'
+  compile 'org.aspectj:aspectjrt:1.8.5'
+  compile 'org.eclipse.jetty.websocket:websocket-client:9.3.0.v20150612'
+  compile 'org.eclipse.jetty.websocket:websocket-api:9.3.0.v20150612'
+  compile 'com.googlecode.json-simple:json-simple:1.1.1'
+  compile 'org.slf4j:slf4j-log4j12:1.7.10'
+  
+  testCompile 'org.mockito:mockito-core:1.9.5'
+  testCompile 'org.apache.commons:commons-lang3:3.0'
+  testCompile 'org.testng:testng:6.8.21'
+  testCompile "org.springframework:spring-test:${springFrameworkVersion}"
+  testCompile 'junit:junit:4.11'
+  
+}
+
+
+
