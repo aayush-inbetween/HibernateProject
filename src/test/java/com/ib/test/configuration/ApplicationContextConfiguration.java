@@ -24,7 +24,7 @@ import com.ib.entity.Relationship;
 @Configuration
 @ComponentScan("com.ib.*")
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = "com.ib.repository,com.ib.onetomany.notmanaged.eager.repository")
+@EnableJpaRepositories(basePackages= "com.ib.*")
 public class ApplicationContextConfiguration {
   
   @Autowired
