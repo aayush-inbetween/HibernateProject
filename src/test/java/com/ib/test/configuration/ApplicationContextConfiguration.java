@@ -69,7 +69,7 @@ public class ApplicationContextConfiguration {
     LocalContainerEntityManagerFactoryBean entityManagerFactory = new LocalContainerEntityManagerFactoryBean();
     
     entityManagerFactory.setDataSource(dataSource());
-    entityManagerFactory.setPackagesToScan("com.ib.entity");
+    entityManagerFactory.setPackagesToScan("com.ib.*");
     entityManagerFactory.setJpaVendorAdapter(jpaVendorAdapter());
     
     Properties jpaProterties = new Properties();
